@@ -1,0 +1,21 @@
+public class Solution {
+    public int SearchInsert(int[] nums, int target) {
+        int l=0;
+        int r=nums.Length;
+        int res = nums.Length;
+        while(l<r)
+        {
+            int m = l+(r-l)/2;
+            if(nums[m]>=target)
+            {
+                r=m;
+            }
+            else
+            {
+                l=m+1;
+            }
+        }
+        return l;
+    }
+
+}

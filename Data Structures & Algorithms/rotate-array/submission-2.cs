@@ -1,0 +1,21 @@
+public class Solution {
+    public int[] reverse(int[] arr,int l, int h)
+    {
+        while(l<h)
+        {
+            int temp = arr[l];
+            arr[l] = arr[h];
+            arr[h] = temp;
+            l++;
+            h--;
+        }
+        return arr;
+    }
+    public void Rotate(int[] nums, int k) {
+        int n = nums.Length;
+        k = k%n;
+        reverse(nums,0,n-1);
+        reverse(nums,0,k-1);
+        reverse(nums,k,n-1);
+    }
+}
